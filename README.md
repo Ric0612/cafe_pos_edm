@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Café POS System - (client group 6)
 # Group 8 - Ric Vincent Villanueva (Project Leader, Main Developer)
           - Anie Jane Austria (Documentation Specialist)
