@@ -1,5 +1,5 @@
-CREATE DATABASE db_pos_system;
-USE db_pos_system;
+CREATE DATABASE db_pos_cafe;
+USE db_pos_cafe;
 
 CREATE TABLE users (
     user_ID INT AUTO_INCREMENT PRIMARY KEY,
