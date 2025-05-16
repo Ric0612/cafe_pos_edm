@@ -1,0 +1,234 @@
+/* Main Layout */
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+#wrapper {
+    overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+
+#page-content-wrapper {
+    min-width: 100vw;
+}
+
+body.sb-sidenav-toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+
+/* Content Area */
+.container-fluid {
+    padding: 1.5rem;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    padding: 1rem;
+}
+
+/* Tables */
+.table {
+    margin-bottom: 0;
+}
+
+.table th {
+    border-top: none;
+    background-color: #f8f9fa;
+    color: #6c4f3d;
+}
+
+/* Forms */
+.form-control:focus {
+    border-color: #8b6b4d;
+    box-shadow: 0 0 0 0.2rem rgba(139, 107, 77, 0.25);
+}
+
+.btn-primary {
+    background-color: #6c4f3d;
+    border-color: #6c4f3d;
+}
+
+.btn-primary:hover {
+    background-color: #8b6b4d;
+    border-color: #8b6b4d;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    body.sb-sidenav-toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #8b6b4d;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6c4f3d;
+}
+
+/* Alerts and Notifications */
+.alert {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* Loading States */
+.loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2rem;
+    height: 2rem;
+    margin: -1rem 0 0 -1rem;
+    border: 0.25rem solid #f3f3f3;
+    border-top: 0.25rem solid #6c4f3d;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Utilities */
+.text-primary {
+    color: #6c4f3d !important;
+}
+
+.bg-primary {
+    background-color: #6c4f3d !important;
+}
+
+.border-primary {
+    border-color: #6c4f3d !important;
+}
+
+/* Reports Page Styles */
+.report-section {
+    margin-bottom: 2rem;
+}
+
+.report-section .card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.report-section .card-header {
+    background-color: #f4e1c1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    padding: 1rem;
+}
+
+.report-section .card-header h2 {
+    color: #6c4f3d;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.report-section .table th {
+    background-color: #f8f9fa;
+    color: #6c4f3d;
+    font-weight: 600;
+}
+
+.report-section .badge {
+    padding: 0.5em 0.75em;
+}
+
+.report-section .table-warning {
+    background-color: #fff3cd !important;
+}
+
+.report-section .date-filter {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.report-section .btn-export {
+    background-color: #6c4f3d;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+}
+
+.report-section .btn-export:hover {
+    background-color: #8b6b4d;
+    transform: translateY(-1px);
+}
+
+/* Card value styles */
+.report-section .card.bg-primary {
+    background-color: #6c4f3d !important;
+    border: none;
+}
+
+.report-section .card.bg-primary .card-body {
+    padding: 1.5rem;
+}
+
+.report-section .card.bg-primary h5 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.report-section .card.bg-primary h3 {
+    font-size: 1.75rem;
+    margin: 0;
+    font-weight: 600;
+} 

@@ -1,0 +1,8 @@
+{
+    "name": "cafe-pos/system",
+    "description": "Cafe POS System",
+    "type": "project",
+    "require": {
+        "tecnickcom/tcpdf": "^6.9"
+    }
+}

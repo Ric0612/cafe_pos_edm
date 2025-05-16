@@ -1,0 +1,253 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(0, 0%, 0%);
+  --primary-color: #6c4f3d;
+  --secondary-color: #f4e1c1;
+  
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+  --h1-font-size: 2rem;
+  --normal-font-size: 1rem;
+  --small-font-size: .813rem;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Body */
+body {
+  font-family: var(--body-font);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #b19054; /* Light background color for the page */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Loading Screen */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* White overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
+
+
+/* Logo Container */
+.logo-container {
+  display: flex;
+  justify-content: center; /* Horizontally center the logo */
+  align-items: center;     /* Vertically center the logo */
+  margin-bottom: 20px; /* Space between logo and progress bar */
+}
+
+/* Logo Animation */
+#loading-logo {
+  max-width: 150px; /* Limit logo size */
+  max-height: 150px; /* Adjust this value if needed */
+  animation: logoAnimation 2s ease-out;
+}
+
+/* Logo Fade-in Animation */
+@keyframes logoAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Progress Bar */
+.progress-container {
+  width: 10%;
+  height: 10px;
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  transition: width 0.1s ease;
+}
+
+/* Main Content */
+#main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+  display: none; /* Initially hidden */
+}
+
+/* Login Form Styles */
+.login__bg {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.login__form {
+  width: 100%;
+  max-width: 420px;
+  background-color: hsla(0, 0%, 100%, 0.9); /* White with some transparency */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(16px); /* Glassmorphism effect */
+  color: var(--black-color);
+  margin: 0 auto;
+}
+
+.login__title {
+  text-align: center;
+  font-size: var(--h1-font-size);
+  margin-bottom: 1.25rem;
+}
+
+.login__inputs, 
+.login__box {
+  display: grid;
+}
+
+.login__inputs {
+  row-gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.login__box {
+  grid-template-columns: 1fr max-content;
+  column-gap: .75rem;
+  align-items: center;
+  border: 2px solid hsla(0, 0%, 100%, .7);
+  padding-inline: 1.25rem;
+  border-radius: 4rem;
+}
+
+.login__input, 
+.login__button {
+  border: none;
+  outline: none;
+}
+
+.login__input {
+  width: 100%;
+  background: none;
+  color: var(--black-color);
+  padding-block: 1rem;
+}
+
+.login__input::placeholder {
+  color: var(--black-color);
+}
+
+.login__box i {
+  font-size: 1.25rem;
+}
+
+.login__check, 
+.login__check-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login__check {
+  margin-bottom: 1rem;
+  font-size: var(--small-font-size);
+}
+
+.login__check-box {
+  column-gap: .5rem;
+}
+
+.login__check-input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--black-color);
+}
+
+.login__forgot {
+  color: var(--black-color);
+}
+
+.login__forgot:hover {
+  text-decoration: underline;
+}
+
+.login__button {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--primary-color);
+  border-radius: 4rem;
+  color: var(--white-color);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login__button:hover {
+  background-color: #4e3b2e;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For medium devices */
+@media screen and (min-width: 576px) {
+  .login__form {
+    width: 90%; /* Adjust width on medium screens */
+    padding-inline: 3rem;
+  }
+
+  .login__title {
+    margin-bottom: 2rem;
+  }
+}
+
+/* For larger devices */
+@media screen and (min-width: 992px) {
+  .login__form {
+    width: 450px; /* Larger form on bigger screens */
+    padding-inline: 4rem;
+  }
+}
+
+/* For extra large screens (e.g., large desktops) */
+@media screen and (min-width: 1200px) {
+  .login__form {
+    width: 500px; /* Even larger form size */
+  }
+}

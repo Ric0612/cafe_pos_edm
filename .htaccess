@@ -1,0 +1,26 @@
+# Enable custom error pages
+ErrorDocument 404 /cafes_pos/dist/404.php
+
+# Enable URL rewriting
+RewriteEngine On
+
+# Ensure direct access to actual files/directories is allowed
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Allow access to localhost
+RewriteCond %{HTTP_HOST} ^localhost [NC,OR]
+RewriteCond %{HTTP_HOST} ^127\.0\.0\.1
+
+# Keep the PHP files accessible
+<FilesMatch "\.php$">
+    Require all granted
+</FilesMatch>
+
+# Prevent directory listing
+Options -Indexes
+
+# Protect .htaccess file
+<Files .htaccess>
+    Require all denied
+</Files> 
