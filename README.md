@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Café POS System - (client group 10)
 # Group 6 - Ric Vincent Villanueva (Project Leader, Main Developer)
           - Anie Jane Austria (Documentation Specialist)
@@ -129,3 +130,6 @@ For issues and support, please contact:
 
 This EDM project is proprietary software. All rights reserved.
 
+=======
+# cafe_pos_edm
+>>>>>>> 4674a8944b89c1e7852b99380cacd62462e06bf2
