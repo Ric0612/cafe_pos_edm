@@ -80,6 +80,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+// Handle user deletion
+if (isset($_GET['delete_id'])) {
+    $delete_id = $conn->real_escape_string($_GET['delete_id']);
+    
+    // Prevent deleting your own account
+    if ($delete_id == $_SESSION['user_ID']) {
+        $_SESSION['message'] = "You cannot delete your own account!";
+        $_SESSION['message_type'] = "danger";
+        header("Location: manage_users.php");
+        exit();
+    }
+    
+    // Delete the user
+    $stmt = $conn->prepare("DELETE FROM users WHERE user_ID = ?");
+    $stmt->bind_param("i", $delete_id);
+    
+    if ($stmt->execute()) {
+        $_SESSION['message'] = "User deleted successfully!";
+        $_SESSION['message_type'] = "success";
+    } else {
+        $_SESSION['message'] = "Error deleting user: " . $conn->error;
+        $_SESSION['message_type'] = "danger";
+    }
+    
+    header("Location: manage_users.php");
+    exit();
+}
+
 // Fetch all users except the current user
 $current_user_id = $_SESSION['user_ID'];
 $users_query = "SELECT * FROM users WHERE user_ID != $current_user_id ORDER BY role, name";
